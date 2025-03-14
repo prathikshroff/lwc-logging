@@ -2,7 +2,7 @@
  * @name              : 
  * @author            : pchannab
  * @usage             : 
- * @last modified on  : 03-11-2025
+ * @last modified on  : 03-14-2025
  * @last modified by  : pchannab
  * Modifications Log
  * Ver   Date         Author     Modification
@@ -33,10 +33,8 @@ public class LogEntryImpl extends LogAbstract {
     public override Boolean save() {
         // Validate before save
         Boolean isSuccessful;
-        if (!validate()) {
-            // LoggingService.logError('Invalid log entry', this);
-            throw new LoggingException('Invalid log entry');
-            // return false;
+        if (!validate()) {            
+            throw new LoggingException('Invalid log entry');            
         }
 
         try {
@@ -60,14 +58,9 @@ public class LogEntryImpl extends LogAbstract {
                 isSuccessful = true;
             } else {
                 // Log any database errors
-                for (Database.Error error : saveResult.getErrors()) {
-                    // LoggingService.logError(
-                    //     'Log Save Error: ' + error.getStatusCode(), 
-                    //     error.getMessage()
-                    // );
+                for (Database.Error error : saveResult.getErrors()) {                    
                     throw new LoggingException('Log Save Error: ' + error.getStatusCode() + ' ' + error.getMessage());
-                }
-                // return false;
+                }                
                 isSuccessful = false;
             }
             return isSuccessful;
