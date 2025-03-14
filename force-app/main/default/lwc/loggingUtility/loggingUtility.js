@@ -157,7 +157,6 @@ const createComponentLogger = (componentName) => {
 
 export {
     LOG_LEVELS,
-    logEvent,
     logDebug,
     logInfo,
     logWarning,
