@@ -2,7 +2,7 @@
  * @name              : 
  * @author            : pchannab
  * @usage             : 
- * @last modified on  : 03-11-2025
+ * @last modified on  : 03-19-2025
  * @last modified by  : pchannab
  * Modifications Log
  * Ver   Date         Author     Modification
@@ -13,12 +13,12 @@
 
 public abstract class LogAbstract {
     protected String uuid;
-    protected String eventName;
-    protected LogLevel logLevel;
-    protected Datetime timestamp;
-    protected String logMessage;
-    protected String userId;
-    protected String user_name;
+    @TestVisible protected String eventName;
+    @TestVisible protected LogLevel logLevel;
+    @TestVisible protected Datetime timestamp;
+    @TestVisible protected String logMessage;
+    @TestVisible protected String userId;
+    @TestVisible protected String user_name;
 
     // Enum to define log levels
     // public enum LogLevel {
