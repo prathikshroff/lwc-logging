@@ -1,0 +1,35 @@
+<!--
+  @name              : 
+  @author            : pchannab
+  @usage             : 
+  @last modified on  : 03-19-2025
+  @last modified by  : pchannab 
+  Modifications Log
+  Ver   Date         Author     Modification
+  1.0   03-19-2025   pchannab   Initial Version
+-->
+<template>
+    <lightning-card title="Example Component with Logging">
+        <div class="slds-p-around_medium">
+            <lightning-button 
+                label="Process Data" 
+                onclick={handleClick}
+                variant="brand"
+                class="slds-m-bottom_medium">
+            </lightning-button>
+
+            
+            <template lwc:if={error}>
+                <div class="slds-text-color_error slds-p-vertical_small">
+                    {error.message}
+                </div>
+            </template>
+            
+            <template lwc:if={data}>
+                <div class="slds-p-vertical_small">
+                    Data loaded successfully!
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
