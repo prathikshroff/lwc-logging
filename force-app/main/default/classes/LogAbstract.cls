@@ -2,14 +2,14 @@
  * @name              : 
  * @author            : pchannab
  * @usage             : 
- * @last modified on  : 03-19-2025
+ * @last modified on  : 04-22-2025
  * @last modified by  : pchannab
  * Modifications Log
  * Ver   Date         Author     Modification
  * 1.0   03-05-2025   pchannab   Initial Version
 **/
 //Abstract class to define common properties and methods for log entries
-//Subclasses must implement their own validation and persistence logic
+//Subclasses must implement their own validation and persistence logic.
 
 public abstract class LogAbstract {
     protected String uuid;
